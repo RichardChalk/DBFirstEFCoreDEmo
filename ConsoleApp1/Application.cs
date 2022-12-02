@@ -83,6 +83,8 @@ namespace SkysDBDemoDatabas
                     }
                     if (sel == 4)
                     {
+                        // För demons skulle använder vi en statisk 'id'
+                        // I verkligheten skulle denna finnas som en parameter
                         var idToUpdate = 4;
                         var user = dbContext.Users.First(u => u.Id == idToUpdate);
                         user.Bids.Add(new Bid
@@ -94,7 +96,7 @@ namespace SkysDBDemoDatabas
                     }
                     if (sel == 5)
                     {
-                        // SELECT * FROM Users INNER JOIN INLOGGNING
+                        // SELECT * FROM Users INNER JOIN BIDS
                         foreach (var user in dbContext.Users
                                      .Include(u => u.Bids))
                         {
